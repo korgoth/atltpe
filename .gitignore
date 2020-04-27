@@ -6,3 +6,4 @@ templates/order-templates/*
 *~
 *.swp
 *.swo
+**/templates_c/**
