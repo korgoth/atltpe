@@ -100,7 +100,7 @@ class Preview
 	{
 		$campaign = $params['campaign'];
 
-		$campaign['track_'.$_GET['thank']?'sale':'landing'] = prep_pixel(
+		$campaign['track_'.$_GET['thank']?'sale':'landing'] = $this->prep_pixel(
 									$campaign['track_'.$_GET['thank']?'sale':'landing'],
 									array(
 										'GETPARAMS' => $params['getparams'],
