@@ -1,0 +1,65 @@
+		{if $order_id || $campaign.noindex == "1"}
+			<meta name="robots" content="noindex, nofollow">
+		{/if}
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    	<!--[if lt IE 9]>
+    	  <script src="//cdn4.cachedrives.com/../c/js/html5shiv.js"></script>
+    	  <script src="//cdn4.cachedrives.com/../c/js/respond.js"></script>
+    	<![endif]-->
+
+        {if $include_jquery}
+        <script   src="https://code.jquery.com/jquery-1.12.2.js"   integrity="sha256-VUCyr0ZXB5VhBibo2DkTVhdspjmxUgxDGaLQx7qb7xY="   crossorigin="anonymous"></script>
+        {/if}
+
+    	<!-- Include all compiled plugins (below), or include individual files as needed -->
+        {if !$exclude_bootstrap}
+    	<script src="//cdn4.cachedrives.com/../c/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//cdn4.cachedrives.com/../c/css/bootstrap.min.css" />
+        {/if}
+
+	<link rel="stylesheet" href="//cdn4.cachedrives.com/../c/css/tooltipster.bundle.min.css" />
+    	<script src="//cdn4.cachedrives.com/../c/js/tooltipster.bundle.min.js"></script>
+    	<script src="./assets/js/cart.js?v=6"></script>
+    	<script src="//cdn4.cachedrives.com/../c/js/jquery.playSound.js"></script>
+		
+		
+		{if !$exclude_countdown}
+    	<script src="//cdn4.cachedrives.com/../c/js/jquery.countdown.min.js"></script>
+		{/if}
+		
+    	<script type="text/javascript">var zdir = '{$dir}'; var zlang = '{$lang}'; var pid = '{$product.id}'; var cur = '{$campaign.currency}'; var cc = '{$campaign.country}';</script>
+
+		<script>
+			$(function(){ldelim}
+				if ($('div#mop_holder').length > 0) {ldelim}
+					$('input').attr('autocomplete', 'off');
+				{rdelim}
+				
+				
+				{if !$dont_append_legal_links}
+					$('body').append('<div class=legalfooter style="background: lightgrey; text-align: center !important; padding: 5px; font-size: 12px !important; z-index: 9999;"><a href="{$dir}/terms/{$campaign.country}" target=_blank>{$lang_terms}</a> | <a href="{$dir}/privacy/{$campaign.country}" target=_blank>{$lang_privacy}</a></div>');
+				{/if}
+			{rdelim});
+		</script>
+
+        <style>
+        .red-tooltip + .tooltip > .tooltip-inner {ldelim}background-color: #f00;{rdelim}
+        .red-tooltip + .tooltip.top > .tooltip-arrow {ldelim}border-top-color: #f00;{rdelim}
+        </style>
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+		{if $campaign.last_buyers  && !$order_id}
+		<script>
+			$(function(){ldelim}
+				$('body').append('<div id="custom_last_buyer">{if $lb_img}<img src="//cdn4.cachedrives.com/../c/css/img/lbtn/{$campaign.product_id}.png{/if}" /><p><span class="lb-name"></span> <span class="lb-from"></span> <span class="lb-location"></span> <span class="lb-just-placed"></span> </div>');
+			{rdelim});
+		</script>
+        <link rel="stylesheet" href="//cdn4.cachedrives.com/../c/css/last_buyer.css" />
+		<script>zdir = 'https://bg.immunoactivator-promo.com';</script>
+    	<script src="//cdn4.cachedrives.com/../c/js/last_buyer.js"></script>
+		{/if}

@@ -1,0 +1,5 @@
+<?php
+date_default_timezone_set('Europe/Sofia');
+define('TEMPLATES_PATH', 'templates');
+define('BLOG_TEMPLATES_PATH', 'blog-templates');
+define('ORDER_TEMPLATES_PATH', 'order-templates');
