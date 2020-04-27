@@ -1,8 +1,6 @@
 Thumbs.db
 .DS_Store
 config.php
-templates/blog-templates/*
-templates/order-templates/*
 *~
 *.swp
 *.swo
