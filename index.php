@@ -198,7 +198,7 @@ $preview = new Preview();
 				<p>
 					The dropdown on the left contains all the blog/order templates that are visible by the system. If you need to add new templates check the "File paths and file names" section below. </p>
 				<p>
-					In order to generate a preview you should select what type of template you wish to be rendered and select the tempalte from the dropdown (if the template is not visilbe check the "file paths and file names" section below). After selecting the templates available languages are diaplayed under the dropdown - select the desired language and click the green "Preview" button. </p>
+					In order to generate a preview you should select what type of template you wish to be rendered and select the template from the dropdown (if the template is not visilbe check the "file paths and file names" section below). After selecting the templates available languages are diaplayed under the dropdown - select the desired language and click the green "Preview" button. </p>
 				<p> 
 					If needed you can adjust the parameteres below that to preview different scenarios for each template
 				</p>
@@ -220,10 +220,10 @@ $preview = new Preview();
 						<strong>Directory structure should follow the following pattern:</strong> <code>PRODUCT_NAME/TEMPLATE_NAME/LANGUAGE</code>. Examples for blog and order: 
 						<ul>
 							<li>
-								<em>blog</em> template for <em>FlexOptima</em> called <em>HealthInstitute</em> for <em>BG</em> should be located at <code>tempaltes/blog-templates/FLEXOPTIMA/HealthInstitute/BG</code> 
+								<em>blog</em> template for <em>FlexOptima</em> called <em>HealthInstitute</em> for <em>BG</em> should be located at <code>templates/blog-templates/FLEXOPTIMA/HealthInstitute/BG</code> 
 							</li>
 							<li>
-								<em>order</em> template for <em>FlexOptima</em> called <em>FlexOptima-J</em> for <em>BG</em> should be located at <code>tempaltes/order-templates/FLEXOPTIMA/FlexOptima-J/BG</code> 
+								<em>order</em> template for <em>FlexOptima</em> called <em>FlexOptima-J</em> for <em>BG</em> should be located at <code>templates/order-templates/FLEXOPTIMA/FlexOptima-J/BG</code> 
 							</li>
 						</ul>	
 					</li>
