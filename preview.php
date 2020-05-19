@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ERROR);
+error_reporting(E_ERROR | E_USER_ERROR);
 
 if (!$_GET['tpl_type'] || !$_GET[$_GET['tpl_type'].'_template']) {
 	//not enough params	
