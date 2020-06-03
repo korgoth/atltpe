@@ -36,6 +36,7 @@ $campaign['country'] =   $_GET['country'] ? $_GET['country'] : $pathinfo['basena
 $campaign['campaign_price'] = 99;
 $campaign['campaign_currency'] = 'EUR';
 $campaign['uri'] = 999999;
+$campaign['product_id'] = 12;
 
 $preview = new Preview();
 

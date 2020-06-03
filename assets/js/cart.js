@@ -78,7 +78,7 @@ $(function(){
 				btn.val('').html('').css({background: 'url(//cdn4.cachedrives.com/c/loading.svg) center center no-repeat'})
 				result = '';
 				$.ajax({
-					url: window.location.href,
+					url: "check_input.php?btn=buynow",
 					type: "POST",
 					data: ({
 						pid : btn.attr('data-pid'),
@@ -86,9 +86,18 @@ $(function(){
 						order_data: $('.order_data').serialize(),
 					}),
 					success: function(data){
-						console.log('go');
-						window.location.href = window.location.href+'&thank=1';
-						
+						var response = $.parseJSON(data);
+						console.log(response);
+						if (response.status == 'success') {
+							console.log('go');
+							window.location.href = window.location.href.split('#')[0]+'&thank=1';
+						} else {
+							error_string = response.msg+"\n\n";
+							for (var i = 0; i < response.errors.length; i++) {
+								error_string += response.errors[i]+"\n";
+							};
+							alert(error_string);
+						}
 					},
 					error: function(data) {
 						console.log('err');
@@ -144,14 +153,24 @@ $(function(){
 
 
 		if (!dostop) {
-			$.post(window.location.href, {
+			$.post('check_input.php?btn=save_details', {
 				oid: btn.attr('data-oid'),
 				order_data: $('.order_data').serialize(),
 			},
 			function(data){
-					console.log('ok');
+				var response = $.parseJSON(data);
+				console.log(response);
+				if (response.status == 'success') {
+					console.log('go');
 					btn.parent().hide();
 					$('#thank_container').removeClass('hidden').show();
+				} else {
+					error_string = response.msg+"\n\n";
+					for (var i = 0; i < response.errors.length; i++) {
+						error_string += response.errors[i]+"\n";
+					};
+					alert(error_string);
+				}
 			});
 		}
 

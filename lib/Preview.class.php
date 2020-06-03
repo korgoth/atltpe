@@ -125,6 +125,7 @@ class Preview
 			$smarty->assign('lang', $campaign['country']);
 			$smarty->assign('campaign', $campaign);
 			$smarty->assign('GA', 'TEST_GA');
+			$smarty->assign('order_id', 123);
 			$smarty->display(__DIR__.'/../'.$template_path.'/'.($_GET['thank'] ? 'thank.html' : 'index.html'));
 		} else { 
 			die('Template not found <a href=index.php>BACK</a> and try again');
@@ -172,4 +173,5 @@ class Preview
 			return $pixel;
 		}
 	}
+
 }
