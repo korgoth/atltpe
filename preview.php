@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ERROR);
+error_reporting(E_ERROR | E_USER_ERROR);
 
 if (!$_GET['tpl_type'] || !$_GET[$_GET['tpl_type'].'_template']) {
 	//not enough params	
@@ -13,7 +13,7 @@ require('lib/Preview.class.php');
 $campaign['source'] =  'TEST';
 $campaign['camppaign'] =  'TEST';
 
-$campaign['price'] = (float)$_GET['price'] > 0 ? $_GET['price'] : 999;
+$campaign['price'] = (float)$_GET['price'] > 0 ? (string)$_GET['price'] : '999.99';
 $campaign['shipping'] = (float)$_GET['shipping'] > 0 ? $_GET['shipping'] : 0;
 $campaign['currency'] = isset($_GET['currency']) ? $_GET['currency'] : 'EUR';
 
@@ -37,6 +37,7 @@ $campaign['campaign_price'] = 99;
 $campaign['campaign_currency'] = 'EUR';
 $campaign['uri'] = 999999;
 $campaign['product_id'] = 12;
+
 
 $preview = new Preview();
 

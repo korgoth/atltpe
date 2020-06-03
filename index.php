@@ -91,7 +91,7 @@ $preview = new Preview();
 					</div>
 					<div class='col'>
 						<label><strong>Currency</strong></label>
-						<input type='text' name='price' class='form-control' placeholder='ex: EUR' />
+						<input type='text' name='currency' class='form-control' placeholder='ex: EUR' />
 					</div>
 				</div>
 				<hr>	
