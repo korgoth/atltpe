@@ -84,6 +84,13 @@ class Preview
 			//get template contents
 			$contents = file_get_contents($template_path.'/index.php');
 
+			if (!preg_match('/blog_header/', $contents)) {
+				die ("Error: blog_hedaer view not loaded!");	
+			}
+			if (!preg_match('/blog_footer/', $contents)) {
+				die ("Error: blog_footer view not loaded!");	
+			}
+
 			//set required variables
 			$assets_url = './'.$template_path;
 
