@@ -1,7 +1,7 @@
 <?php
 
 $allowed_order_data_fields = array('first_name', 'last_name', 'phone', 'email', 'city', 'zip', 'address', 'courier_note');
-
+$errors = array();
 switch ($_GET['btn']) {
 	case 'buynow':
 		if (!$_POST['order_data']) {
