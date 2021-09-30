@@ -76,7 +76,7 @@ $(function(){
 				clickable = false;
 				btn.unbind('click');
 				//$('*').css({cursor: 'wait'});
-				btn.val('').html('').css({background: 'url(//cdn4.cachedrives.com/c/loading.svg) center center no-repeat'})
+				btn.val('').html('').css({background: 'url(//cdn4.qckcdn.com/c/loading.svg) center center no-repeat'})
 				result = '';
 				$.ajax({
 					url: "check_input.php?btn=buynow",

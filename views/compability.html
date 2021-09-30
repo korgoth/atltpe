@@ -8,8 +8,8 @@
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     	<!--[if lt IE 9]>
-    	  <script src="//cdn4.cachedrives.com/../c/js/html5shiv.js"></script>
-    	  <script src="//cdn4.cachedrives.com/../c/js/respond.js"></script>
+    	  <script src="//cdn4.qckcdn.com/../c/js/html5shiv.js"></script>
+    	  <script src="//cdn4.qckcdn.com/../c/js/respond.js"></script>
     	<![endif]-->
 
         {if $include_jquery}
@@ -18,18 +18,18 @@
 
     	<!-- Include all compiled plugins (below), or include individual files as needed -->
         {if !$exclude_bootstrap}
-    	<script src="//cdn4.cachedrives.com/../c/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="//cdn4.cachedrives.com/../c/css/bootstrap.min.css" />
+    	<script src="//cdn4.qckcdn.com/../c/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//cdn4.qckcdn.com/../c/css/bootstrap.min.css" />
         {/if}
 
-	<link rel="stylesheet" href="//cdn4.cachedrives.com/../c/css/tooltipster.bundle.min.css" />
-    	<script src="//cdn4.cachedrives.com/../c/js/tooltipster.bundle.min.js"></script>
+	<link rel="stylesheet" href="//cdn4.qckcdn.com/../c/css/tooltipster.bundle.min.css" />
+    	<script src="//cdn4.qckcdn.com/../c/js/tooltipster.bundle.min.js"></script>
     	<script src="./assets/js/cart.js?v=6"></script>
-    	<script src="//cdn4.cachedrives.com/../c/js/jquery.playSound.js"></script>
+    	<script src="//cdn4.qckcdn.com/../c/js/jquery.playSound.js"></script>
 		
 		
 		{if !$exclude_countdown}
-    	<script src="//cdn4.cachedrives.com/../c/js/jquery.countdown.min.js"></script>
+    	<script src="//cdn4.qckcdn.com/../c/js/jquery.countdown.min.js"></script>
 		{/if}
 		
     	<script type="text/javascript">var zdir = '{$dir}'; var zlang = '{$lang}'; var pid = '{$product.id}'; var cur = '{$campaign.currency}'; var cc = '{$campaign.country}';</script>
@@ -56,10 +56,10 @@
 		{if $campaign.last_buyers  && !$order_id}
 		<script>
 			$(function(){ldelim}
-				$('body').append('<div id="custom_last_buyer">{if $lb_img}<img src="//cdn4.cachedrives.com/../c/css/img/lbtn/{$campaign.product_id}.png{/if}" /><p><span class="lb-name"></span> <span class="lb-from"></span> <span class="lb-location"></span> <span class="lb-just-placed"></span> </div>');
+				$('body').append('<div id="custom_last_buyer">{if $lb_img}<img src="//cdn4.qckcdn.com/../c/css/img/lbtn/{$campaign.product_id}.png{/if}" /><p><span class="lb-name"></span> <span class="lb-from"></span> <span class="lb-location"></span> <span class="lb-just-placed"></span> </div>');
 			{rdelim});
 		</script>
-        <link rel="stylesheet" href="//cdn4.cachedrives.com/../c/css/last_buyer.css" />
+        <link rel="stylesheet" href="//cdn4.qckcdn.com/../c/css/last_buyer.css" />
 		<script>zdir = 'https://bg.immunoactivator-promo.com';</script>
-    	<script src="//cdn4.cachedrives.com/../c/js/last_buyer.js"></script>
+    	<script src="//cdn4.qckcdn.com/../c/js/last_buyer.js"></script>
 		{/if}
