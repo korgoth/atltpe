@@ -259,6 +259,7 @@ $preview = new Preview();
 
 	<script>
 		$(function(){
+			$('form').attr('target', $('input[name=target]').is(':checked') ? $('input[name=target]').val() : '');
 			$('input[name=target]').change(function(){
 				$('form').attr('target', $(this).is(':checked') ? $(this).val() : '');
 			});
