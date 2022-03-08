@@ -20,7 +20,7 @@ $preview = new Preview();
   </head>
   <body>
 
-	<form action="preview.php">
+	<form action="preview.php" id='preview_form'>
 	<div class='container my-4'>
 		<h1 class='text-center'>Template preview engine</h1>
 		<div class='row'>
@@ -179,7 +179,7 @@ $preview = new Preview();
 				<hr>
 				<div>
 					<div class='form-check form-check-inline'>
-						<input class='form-check-input' type='checkbox' id='target' name='target' value='_blank'>
+						<input class='form-check-input' type='checkbox' id='target' name='target' value='_blank' checked='checked'>
 						<label class='form-check-label' for='target'>Open in new window</label>
 					</div>
 					<div class='form-check form-check-inline'>
@@ -188,6 +188,10 @@ $preview = new Preview();
 					</div>
 					<br><br>
 					<button type="submit" class='btn btn-lg btn-success btn-block'>Preview</button>
+
+					<hr>
+					Public preview link (assuming changes have been synced):
+					<textarea id='preview_link' class='form-control' rows=8 onclick="this.select()"></textarea>
 				</div>
 			</div>
 
@@ -294,8 +298,31 @@ $preview = new Preview();
 				} else { 
 					country_store.html('--');
 				}
+
 			});
+
+			$('div.settings select, select[name=blog_template], select[name=order_template]').change(function(e){
+				update_preview_link();
+			});
+			$('div.pixels input, input[name=price], input[name=shipping], input[name=currency]').blur(function(e){
+				update_preview_link();
+			});
+
 		});
+
+		function update_preview_link() {
+			if (
+				($('input[name=tpl_type]').val() == 'blog' && $('select[name=blog_template]').val() != '')
+				||
+				($('input[name=tpl_type]').val() == 'order' && $('select[name=order_template]').val() != '')
+			)
+			{
+				var lnk = "<?= PREVIEW_URL ?>"+$('form#preview_form').serialize();
+				lnk = lnk.replace(/&/g, "&amp;");
+				$('#preview_link').html(lnk);
+
+			}
+		}
 	</script>
   </body>
 </html>
