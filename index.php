@@ -308,14 +308,13 @@ $preview = new Preview();
 			$('div.pixels input, input[name=price], input[name=shipping], input[name=currency]').blur(function(e){
 				update_preview_link();
 			});
-
 		});
 
 		function update_preview_link() {
 			if (
-				($('input[name=tpl_type]').val() == 'blog' && $('select[name=blog_template]').val() != '')
+				($('input[name=tpl_type]:checked').val() == 'blog' && $('select[name=blog_template]').val() != '')
 				||
-				($('input[name=tpl_type]').val() == 'order' && $('select[name=order_template]').val() != '')
+				($('input[name=tpl_type]:checked').val() == 'order' && $('select[name=order_template]').val() != '')
 			)
 			{
 				var lnk = "<?= PREVIEW_URL ?>"+$('form#preview_form').serialize();
