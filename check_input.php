@@ -42,6 +42,37 @@ switch ($_GET['btn']) {
 		}
 	break;
 
+	case 'validate_fields':
+		if (!$_POST['order_data']) {
+			$errors[] = "order_data missing, check if your inputs have class 'order_data'!";	
+		}
+		parse_str($_POST['order_data'], $order_data);
+
+		if (empty($order_data)) {
+			$errors[] = "order_data array is empty! check if your inputs have 'order_data' class";	
+		} else { 
+			if (!$order_data['first_name']) {
+				$errors[] = "Required field 'first_name' is missing!";	
+			}
+			if (!$order_data['phone']) {
+				$errors[] = "Required field 'phone' is missing!";	
+			}
+		}
+
+		//check if all fields in order_data are allowed
+		foreach ($order_data as $key => $value) {
+			if (!in_array($key, $allowed_order_data_fields)) {
+				$errors[] = "'{$key}' field provided but is not allowed!";	
+			}
+		}
+
+		if (!$errors) {
+			$msg = "All required attributes found";	
+		} else { 
+			$msg = "There are errors in the template, please correct the following:";
+		}
+	break;
+
 	case 'save_details':
 		if (!$_POST['order_data']) {
 			$errors[] = "order_data missing, check if your inputs have class 'order_data'!";	
@@ -69,7 +100,7 @@ switch ($_GET['btn']) {
 	
 	default:
 		$msg = "Invalid input";
-		$errors[] = "You have access this file without permission";	
+		$errors[] = "You cant access this file without permission";	
 	break;
 }
 

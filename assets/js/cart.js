@@ -158,21 +158,37 @@ $(function(){
 		if (!fields_invalid) {
 			
 			//check if phone is valid here
-			$.getJSON("//lib2.qckcdn.com/phone.php?p="+$('input[name=phone]:last').val()+"&c="+cc, function(data){}).done(function(data){
-				if (data.status != "OK") {
-					//phone number is invalid
-					$('input[name=phone]').tooltipster('show');
-					$('input[name=phone]').addClass('alert-danger');
-					fields_invalid = true;
-				} else {
-					//if there is a vallable specified - try to call it
-					var callable = btn.attr('data-callable');
-					if (callable) {
-						window[callable]();
+			$.ajax({
+					url: "check_input.php?btn=validate_fields",
+					type: "POST",
+					data: ({
+						pid : btn.attr('data-pid'),
+						campaign_uri: btn.attr('data-campaign-uri'),
+						order_data: $('.order_data').serialize(),
+					}),
+					success: function(data){
+						var response = $.parseJSON(data);
+						console.log(response);
+						if (response.status == 'success') {
+							console.log('go');
+							var callable = btn.attr('data-callable');
+							if (callable) {
+								window[callable]();
+							}
+						} else {
+							fields_invalid = true;
+							error_string = response.msg+"\n\n";
+							for (var i = 0; i < response.errors.length; i++) {
+								error_string += response.errors[i]+"\n";
+							};
+							alert(error_string);
+						}
+					},
+					error: function(data) {
+						console.log('err');
+						console.log(data);
 					}
-				}
-			});
-
+				});	
 		}
 	});
 
