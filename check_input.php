@@ -1,6 +1,6 @@
 <?php
 
-$allowed_order_data_fields = array('first_name', 'last_name', 'phone', 'email', 'city', 'zip', 'address', 'courier_note');
+$allowed_order_data_fields = array('first_name', 'last_name', 'phone', 'email', 'city', 'zip', 'address', 'courier_note', 'bundles');
 $errors = array();
 switch ($_GET['btn']) {
 	case 'buynow':
