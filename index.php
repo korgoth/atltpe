@@ -82,6 +82,10 @@ $preview = new Preview();
 				<hr>
 				<div class='row'>
 					<div class='col'>
+						<label><strong>Quantity</strong></label>
+						<input type='text' name='qty' class='form-control' placeholder='ex: 1' />
+					</div>
+					<div class='col'>
 						<label><strong>Price</strong></label>
 						<input type='text' name='price' class='form-control' placeholder='ex: 55.25' />
 					</div>
@@ -305,7 +309,7 @@ $preview = new Preview();
 			$('div.settings select, select[name=blog_template], select[name=order_template]').change(function(e){
 				update_preview_link();
 			});
-			$('div.pixels input, input[name=price], input[name=shipping], input[name=currency]').blur(function(e){
+			$('div.pixels input, input[name=qty], input[name=price], input[name=shipping], input[name=currency]').blur(function(e){
 				update_preview_link();
 			});
 		});

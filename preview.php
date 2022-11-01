@@ -14,6 +14,7 @@ $campaign['source'] =  'TEST';
 $campaign['camppaign'] =  'TEST';
 
 $campaign['price'] = (float)$_GET['price'] > 0 ? (string)$_GET['price'] : '999.99';
+$campaign['qty'] = (float)$_GET['qty'] > 0 ? (string)$_GET['qty'] : '1';
 $campaign['shipping'] = (float)$_GET['shipping'] > 0 ? $_GET['shipping'] : 0;
 $campaign['currency'] = isset($_GET['currency']) ? $_GET['currency'] : 'EUR';
 
