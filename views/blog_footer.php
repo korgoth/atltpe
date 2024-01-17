@@ -15,7 +15,7 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
+/* Modal Content_ */
 .TOS_modal-content, .PRIV_modal-content {
     background-color: #fefefe;
     margin: auto;
